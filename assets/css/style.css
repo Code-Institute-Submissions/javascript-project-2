@@ -1,0 +1,13 @@
+.backside {
+    position: absolute;
+}
+
+.frontside,
+.backside {
+    background: white;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
