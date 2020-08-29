@@ -5,9 +5,32 @@
 .frontside,
 .backside {
     background: white;
+    backface-visibility: hidden;
+}
+
+.frontside {
+    transform: rotateY(180deg)
 }
 
 img {
     width: 200px;
     height: 200px;
+}
+
+.card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.card.flip {
+    transform: rotateY(180deg)
+}
+
+.league-memorygame {
+    perspective: 1000px;
+}
+
+.card {
+    transform-style: preserve-3d;
+    transition:  .5s;
 }
