@@ -1,3 +1,33 @@
+/*-------------------------------------------------------------   Header       */
+
+.header {
+    background-color: #292928;
+    color: 	#F5F5F5;
+}
+
+/*-------------------------------------------------------------   Navigation bar       */
+
+
+
+/*-------------------------------------------------------------   Body and Content       */
+
+html, body {
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+/*-------------------------------------------------------------   Cards and their flipping       */
+
 .backside {
     position: absolute;
 }
@@ -6,15 +36,17 @@
 .backside {
     background: white;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden
 }
 
 .frontside {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
+    margin: 5px;
 }
 
 .card:active {
@@ -23,14 +55,31 @@ img {
 }
 
 .card.flip {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 }
 
 .league-memorygame {
+    background-color: transparent;
+    border: 1px solid #f1f1f1;
     perspective: 1000px;
 }
 
 .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
     transform-style: preserve-3d;
-    transition:  .5s;
+}
+
+/*-------------------------------------------------------------   Footer       */
+
+.footer {
+    background-color: #292928;
+    color: 	#F5F5F5;
+}
+
+.footer {
+  flex-shrink: 0;
 }
