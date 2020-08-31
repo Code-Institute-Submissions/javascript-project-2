@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll(`.card`);
+let cards = document.querySelectorAll(`.card`);
 
 let flippedCard = false;
 let firstCard, secondCard;
@@ -59,3 +59,10 @@ function resetMap() {
 })();
 
 cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
+
+let cardreset = document.querySelector('.resetbutton');
+
+cardreset.onclick = function() {
+    cards.classList.toggle('flip');
+    console.log("hi!");
+}
