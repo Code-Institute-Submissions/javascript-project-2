@@ -2,12 +2,55 @@
 
 .header {
     background-color: #292928;
-    color: 	#F5F5F5;
+    color: 	rgb(211, 211, 211)
 }
 
 /*-------------------------------------------------------------   Navigation bar       */
 
+.nav-item{
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 35px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 25px;
+}
 
+.nav-item a:hover{
+    text-decoration: none;
+}
+
+.home{
+    color: rgb(211, 211, 211)
+}
+
+.home:hover{
+    color: rgb(117, 115, 115)
+}
+
+.easy{
+    color: rgb(78, 250, 78)
+}
+
+.easy:hover{
+    color: rgb(4, 168, 4)
+}
+
+.medium{
+    color: rgb(233, 253, 56)
+}
+
+.medium:hover{
+    color: rgb(162, 175, 40)
+}
+
+.hard{
+    color: rgb(238, 17, 17)
+}
+
+.hard:hover{
+    color: rgb(145, 12, 12)
+}
 
 /*-------------------------------------------------------------   Body and Content       */
 
