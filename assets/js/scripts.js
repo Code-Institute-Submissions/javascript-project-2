@@ -1,4 +1,5 @@
 let cards = document.querySelectorAll(`.card`);
+var images = document.querySelectorAll('.frontside')
 
 let flippedCard = false;
 let firstCard, secondCard;
@@ -36,7 +37,7 @@ function disableCards() {
     resetMap();  // Resets the map when there is a mismatch, making sure you can select "firstCard" again.
 }
 
-function unflipCards() {
+function unflipCards() { // unflips the cards when there is no match after a brief delay
     locked = true;
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -46,23 +47,39 @@ function unflipCards() {
     }, 1300)
 }
 
-function resetMap() {
+function resetMap() { // makes the cards clickable again when there is no match
     [flippedCard, locked] = [null, null];
     [firstCard, secondCard] = [null, null];
 }
 
-(function shuffleCards() {
-    cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 50);
-        card.style.order = randomPos;
-    });
-})();
+function shuffle(array) {       // The Fisher-Yates (aka Knuth) Shuffle used to shuffle the images
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+(function randomizeMap() {
+    shuffle(images);
+    for (var i = 0; i < cards.length; i++) {
+        
+    }
+})()
 
 cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
 
 $(".resetbutton").on('click', resetgame)  // allows you to reset the map by clicking the button allowing you to "retry"
 
-function resetgame() {
+function resetgame() {  //    function to make the game resettable by removing any flipped cards and re-randomizing the map layout.
     $(".card").removeClass('flip');
     cards.forEach(card => card.addEventListener(`click`, flipCard));
     setTimeout(() => { 
