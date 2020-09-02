@@ -53,16 +53,22 @@ function resetMap() {
 
 (function shuffleCards() {
     cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 100);
+        let randomPos = Math.floor(Math.random() * 50);
         card.style.order = randomPos;
     });
 })();
 
 cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
 
-let cardreset = document.querySelector('.resetbutton');
+$(".resetbutton").on('click', resetgame)  // allows you to reset the map by clicking the button allowing you to "retry"
 
-cardreset.onclick = function() {
-    cards.classList.toggle('flip');
-    console.log("hi!");
+function resetgame() {
+    $(".card").removeClass('flip');
+    cards.forEach(card => card.addEventListener(`click`, flipCard));
+    setTimeout(() => { 
+        cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 50);
+        card.style.order = randomPos;
+        });
+    }, 1300)
 }
