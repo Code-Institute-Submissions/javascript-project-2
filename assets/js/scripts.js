@@ -1,5 +1,4 @@
-let cards = document.querySelectorAll(`.card`);
-var images = document.querySelectorAll('.frontside')
+var cards = document.querySelectorAll(`.card`);
 
 let flippedCard = false;
 let firstCard, secondCard;
@@ -20,6 +19,7 @@ function flipCard() {
 
     checkMatch();   // checks for matches and if theres a match it keeps them up and makes them unable to click
     // if theres no match they flip themselves back after a short delay
+    onTry()
 }
 
 function checkMatch() {
@@ -35,6 +35,18 @@ function disableCards() {
     secondCard.removeEventListener('click', flipCard)
 
     resetMap();  // Resets the map when there is a mismatch, making sure you can select "firstCard" again.
+
+    setTimeout(() => {
+        completed()
+    }, 1300)
+}
+
+function completed() {
+    if ($(".card.flip").length == $(".card").length) {   // checks to see whether these were the last cards you needed to flip or not
+        modal.style.display = "block";  //  if it was the last card that needed to be flipped it pops up the "completed" screen
+        resetgame()
+        
+    }
 }
 
 function unflipCards() { // unflips the cards when there is no match after a brief delay
@@ -68,14 +80,26 @@ function shuffle(array) {       // The Fisher-Yates (aka Knuth) Shuffle used to 
   return array;
 }
 
+
+var images = new Array (document.querySelectorAll('.frontside'));
+shuffle(images);
+console.log(images);
+
+
 (function randomizeMap() {
     shuffle(images);
     for (var i = 0; i < cards.length; i++) {
-        
+        images.src = cards[i];
     }
 })()
 
 cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
+
+var tries = 0;
+function onTry() {
+    tries += 1;
+    document.getElementById("tries").innerHTML = tries;
+};
 
 $(".resetbutton").on('click', resetgame)  // allows you to reset the map by clicking the button allowing you to "retry"
 
@@ -88,4 +112,31 @@ function resetgame() {  //    function to make the game resettable by removing a
         card.style.order = randomPos;
         });
     }, 1300)
+    onTry(tries = -1)
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
