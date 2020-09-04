@@ -64,36 +64,36 @@ function resetMap() { // makes the cards clickable again when there is no match
     [firstCard, secondCard] = [null, null];
 }
 
-function shuffle(array) {       // The Fisher-Yates (aka Knuth) Shuffle used to shuffle the images
-  var currentIndex = array.length, temporaryValue, randomIndex;
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
 
-  while (0 !== currentIndex) {
-
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
-
-
-var images = new Array (document.querySelectorAll('.frontside'));
-shuffle(images);
-console.log(images);
-
-
-(function randomizeMap() {
-    shuffle(images);
-    for (var i = 0; i < cards.length; i++) {
-        images.src = cards[i];
-    }
-})()
+var images = document.querySelectorAll('.frontside');
 
 cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
+
+$(images).shuffle();
 
 var tries = 0;
 function onTry() {
