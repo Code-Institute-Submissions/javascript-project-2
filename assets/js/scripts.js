@@ -45,7 +45,6 @@ function completed() {
     if ($(".card.flip").length == $(".card").length) {   // checks to see whether these were the last cards you needed to flip or not
         modal.style.display = "block";  //  if it was the last card that needed to be flipped it pops up the "completed" screen
         resetgame()
-        
     }
 }
 
@@ -63,7 +62,7 @@ function resetMap() { // makes the cards clickable again when there is no match
     [flippedCard, locked] = [null, null];
     [firstCard, secondCard] = [null, null];
 }
-(function($){
+(function($){   // Function that shuffles the map correctly 
     $.fn.shuffle = function() {
         var allElems = this.get(),
             getRandom = function(max) {
@@ -88,10 +87,11 @@ cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
 
 $(images).shuffle();
 
-var tries = 0;
+var tries = 0;  //  keeps track of how many times user has checked for pairs
 function onTry() {
     tries += 1;
     document.getElementById("tries").innerHTML = tries;
+    document.getElementById("victry").innerHTML = tries;
 };
 
 $(".resetbutton").on('click', resetgame)  // allows you to reset the map by clicking the button allowing you to "retry"
@@ -100,50 +100,14 @@ function resetgame() {  //    function to make the game resettable by removing a
     $(".card").removeClass('flip');
     cards.forEach(card => card.addEventListener(`click`, flipCard));
     setTimeout(() => { 
-        (function($){
-            $.fn.shuffle = function() {
-                var allElems = this.get(),
-                    getRandom = function(max) {
-                        return Math.floor(Math.random() * max);
-                    },
-                    shuffled = $.map(allElems, function(){
-                        var random = getRandom(allElems.length),
-                            randEl = $(allElems[random]).clone(true)[0];
-                        allElems.splice(random, 1);
-                        return randEl;
-                });
-                this.each(function(i){
-                    $(this).replaceWith($(shuffled[i]));
-                });
-                return $(shuffled);
-            };
-        })(jQuery);
         $(images).shuffle();
     }, 1300)
     onTry(tries = -1)
 }
 
-// Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModal");  // The modal that pops up when completed
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function(event) {  // Closes the modal when clicked outside of
   if (event.target == modal) {
     modal.style.display = "none";
   }
