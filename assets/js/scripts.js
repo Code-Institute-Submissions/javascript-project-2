@@ -23,7 +23,7 @@ function flipCard() {
 }
 
 function checkMatch() {
-    if (firstCard.dataset.image === secondCard.dataset.image) {
+    if (firstCard.firstElementChild.dataset.image === secondCard.firstElementChild.dataset.image) {
         disableCards();  // disables the cards, making them unclickable since there was a match
     } else {
         unflipCards();  // flips the cards clicked back since there was no match
@@ -63,11 +63,8 @@ function resetMap() { // makes the cards clickable again when there is no match
     [flippedCard, locked] = [null, null];
     [firstCard, secondCard] = [null, null];
 }
-
 (function($){
- 
     $.fn.shuffle = function() {
- 
         var allElems = this.get(),
             getRandom = function(max) {
                 return Math.floor(Math.random() * max);
@@ -78,15 +75,11 @@ function resetMap() { // makes the cards clickable again when there is no match
                 allElems.splice(random, 1);
                 return randEl;
            });
- 
         this.each(function(i){
             $(this).replaceWith($(shuffled[i]));
         });
- 
         return $(shuffled);
- 
     };
- 
 })(jQuery);
 
 var images = document.querySelectorAll('.frontside');
@@ -107,10 +100,25 @@ function resetgame() {  //    function to make the game resettable by removing a
     $(".card").removeClass('flip');
     cards.forEach(card => card.addEventListener(`click`, flipCard));
     setTimeout(() => { 
-        cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 50);
-        card.style.order = randomPos;
-        });
+        (function($){
+            $.fn.shuffle = function() {
+                var allElems = this.get(),
+                    getRandom = function(max) {
+                        return Math.floor(Math.random() * max);
+                    },
+                    shuffled = $.map(allElems, function(){
+                        var random = getRandom(allElems.length),
+                            randEl = $(allElems[random]).clone(true)[0];
+                        allElems.splice(random, 1);
+                        return randEl;
+                });
+                this.each(function(i){
+                    $(this).replaceWith($(shuffled[i]));
+                });
+                return $(shuffled);
+            };
+        })(jQuery);
+        $(images).shuffle();
     }, 1300)
     onTry(tries = -1)
 }
