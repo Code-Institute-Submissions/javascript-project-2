@@ -87,20 +87,22 @@ body {
 .backside {
     position: absolute;
     width: calc(100% - 30px);
-    height: calc(100% - 30px);
+    height: calc(120% - 30px);
 }
 
 .frontside,
 .backside {
     background: white;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden
+    -webkit-backface-visibility: hidden;
+    padding-top: 1px;
+    background-color: transparent;
 }
 
 .frontside {
     transform: rotateY(180deg);
     width: 100%;
-    height: calc(100% - 30px);;
+    height: calc(120% - 30px);;
 }
 
 img {
@@ -129,6 +131,16 @@ img {
     transition: transform 0.8s;
     transform-style: preserve-3d;
     border-width: 0;
+    background-color: transparent;
+}
+
+/*-------------------------------------------------------------   Home Page    */
+
+
+.main-page {
+    background-image: url('../images/backgroundhomecap.png');
+    width: 100%;
+    height: 100%;
 }
 
 /*-------------------------------------------------------------   Game completed modal      */

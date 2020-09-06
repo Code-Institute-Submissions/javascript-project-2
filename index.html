@@ -29,87 +29,90 @@
         </div>
     </header>
 
-    <section class="container-fluid league-memorygame main-page">
-    <div class="row">
-        <div class="col-1 sidebar"></div>
-    </div>
-        <div class="information">
-            <div>This is a game to test and train your memory! Pick the difficulty that you would like to play at in the navigation menu above and play!</div>
-            <div>The goal is to match the League of Legends champions. Try and see how it works below!</div>
-        </div>
-        <div class="index-board">
-            <div class="row justify-content-md-center">
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/ahri.jpg" data-image="ahri" alt="ahri">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/akali.jpg" alt="akali" data-image="akali">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/brand.jpg" alt="brand" data-image="brand">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
+    <section class="main-page">
+        <div class="container-fluid league-memorygame">
+            <div class="row">
+                <div class="col-1 sidebar"></div>
             </div>
 
-            <div class="row justify-content-md-center">
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/garen.jpg" alt="garen" data-image="garen">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
+            <div class="information">
+                <div>This is a game to test and train your memory! Pick the difficulty that you would like to play at in the navigation menu above and play!</div>
+                <div>The goal is to match the League of Legends champions. Try and see how it works below!</div>
+            </div>
+            
+            <div class="index-board">
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/ahri.jpg" data-image="ahri" alt="ahri">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/akali.jpg" alt="akali" data-image="akali">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/brand.jpg" alt="brand" data-image="brand">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
                 </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/katarina.jpg" alt="katarina" data-image="katarina">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
+
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/garen.jpg" alt="garen" data-image="garen">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/katarina.jpg" alt="katarina" data-image="katarina">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/pyke.jpg" alt="pyke" data-image="pyke">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
                 </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/pyke.jpg" alt="pyke" data-image="pyke">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
+
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/pyke.jpg" alt="pyke" data-image="pyke">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/katarina.jpg" alt="katarina" data-image="katarina">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/garen.jpg" alt="garen" data-image="garen">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/brand.jpg" alt="brand" data-image="brand">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/ahri.jpg" alt="ahri" data-image="ahri">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                    <div class="col-lg-1 card">
+                    <img class="frontside" src="assets/images/akali.jpg" alt="akali" data-image="akali">
+                    <img class="backside" src="assets/images/cardhome.png" alt="icon">
+                    </div>
+                </div>
+                <div class="col-1 sidebar"></div>
+
+                <button class="resetbutton">Reset</button>
+
+                <div>Tries: <a id="tries">0</a></div>
+
+                <div id="myBtn"></div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <p>Congratulations! You have beaten this level in <span id="victry"></span> times!</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/pyke.jpg" alt="pyke" data-image="pyke">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/katarina.jpg" alt="katarina" data-image="katarina">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/garen.jpg" alt="garen" data-image="garen">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-            </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/brand.jpg" alt="brand" data-image="brand">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/ahri.jpg" alt="ahri" data-image="ahri">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-                <div class="col-lg-1 card">
-                <img class="frontside" src="assets/images/akali.jpg" alt="akali" data-image="akali">
-                <img class="backside" src="assets/images/icon.jpg" alt="icon">
-                </div>
-            </div>
-            <div class="col-1 sidebar"></div>
-
-            <button class="resetbutton">Reset</button>
-
-            <div>Tries: <a id="tries">0</a></div>
-
-            <div id="myBtn"></div>
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <p>Congratulations! You have beaten this level in <span id="victry"></span> times!</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
