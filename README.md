@@ -1,39 +1,66 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+League Of Legends Memory Game
 
-Welcome gerwini,
+Hi! Welcome to my website, I myself have always been a player of the game League of Legends, but sometimes I was left wondering to myself,
+What if there were more games that were related to it? Because I think its satisfying to see characters of my favorite game pop up in
+different ones and be able to recognize them, I mean who doesnt like seeing more of their favorites?
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+So thats why when I was tasked with this project I was wondering for a bit about what I am supposed to do or where do I want to go with this?
+I was looking for differnt project ideas and was contemplating just making a normal memory game as it was one of the recommended and suggested
+options. Not knowing what to do the thought to just leave it here and ponder over it while I play some League of Legends came to mind but then
+the thought hit me, if im going to play league anyway why don't I just make my project League based? So thats how we all ended up here.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+UX
 
-`python3 -m http.server`
+This website is intended for the same reason most memory games are, for people that just enjoy playing memory games or people that would like
+to train their memories, however I decided to make my memory game in a way to appeal moreso to people that play video games and enjoy gamey
+aspects, especially people that play League of Legends. By trying to make it count the amounts of times you tried to match them all up I 
+hope for players to set their own goals of how fast they can complete the game tries wise. I also added different difficulty levels so 
+that if one is too hard or too easy you can find a difficulty that could match you more easily and who knows maybe youll be able to complete
+the hardest difficulty in but a few tries after a bit!!
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
+Features
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Feature 1 - difficulty settings
+3 different difficulty settings that allow people to go from easy to medium to hard to find one that they want to play at the time, made it easy 
+to click on them by using colors that generally tend to represent them.
 
-A blue button should appear to click: *Make Public*,
+Feature 2 - The board
+Allows people to try to match the pictures on the board in sets of 2 to try and completely match the entire board, if they get a wrong pair they
+flip back and have to try to memorize where they were in order to match them when they find a pair! When the board is completed a modal with pop up
+congratulating the player on their victory before it resets the board allowing them to play again.
 
-Another blue button should appear to click: *Open Browser*.
+Feature 3 - Reset button
+A button that allows someone if they know they arent going to make it in the amount of tries that they either have set for themselves or their goal is 
+to reset the map, setting back their try counter to 0, unflipping all the cards and re-randomizing all of them and making them all selectable again.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+Feature 4 - try counter
+This counter allows the user to keep track of how many times they have tried to match the cards.
 
-## Updates Since The Instructional Video
+Feature 5 - Footer links
+These links have a few different uses, being
+- Contact link, allows users to contact me to ask questions, give suggestions, report problems etc.
+- League of Legends page, for anyone that would like more information about League of Legends they can look at it here!
+- League of Legends champions, a link to a site displaying all the characters League of Legends has, for if someone were to want to take 
+a look as to where I got my inspiration from or just wants to see more artwork of the game.
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Technologies Used
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- JQuery is used by the website to simplify DOM manipulation, however its only used in a select few places.
+- Bootstrap grid is used for the structure of the layout of the webpage, although it ended up making the javascript significantly harder
+for me to do what I wanted since the shuffling is harder when you cant simply use style.order since all the cards are seperated in rows in a container
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+1. Cards:
+    i. Try to double click the cards
+    ii. Try to click on other cards before the cards clicked on first return to their original from
+    iii. Try to click on a card of a pair that had already been matched
+    iv. Try to refresh the page to make sure the map is shuffled differently
 
---------
-
-Happy coding!
+2. Links:
+    i. Try to click the contact link to make sure that it works as intended
+    ii. try to click the League of Legends to take you to their home page
+    iii. Try to click the champions link to make sure it takes you to the list of champions
