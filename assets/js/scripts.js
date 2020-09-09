@@ -62,7 +62,7 @@ function resetMap() { // makes the cards clickable again when there is no match
     [flippedCard, locked] = [null, null];
     [firstCard, secondCard] = [null, null];
 }
-(function($){   // Function that shuffles the map correctly 
+(function shuffle(){   // Function that shuffles the map correctly 
     $.fn.shuffle = function() {
         var allElems = this.get(),
             getRandom = function(max) {
@@ -85,7 +85,9 @@ var images = document.querySelectorAll('.frontside');
 
 cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
 
-$(images).shuffle();
+window.addEventListener('load', function(){
+    $(images).shuffle();
+});
 
 var tries = 0;  //  keeps track of how many times user has checked for pairs
 function onTry() {

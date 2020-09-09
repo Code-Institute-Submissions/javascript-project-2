@@ -18,8 +18,8 @@
                 <h1>League of Legends memory game</h1>
             </div>
 
-            <div class="nav-bar">
-                <ul>
+            <div>
+                <ul class="nav-bar">
                     <li class="nav-item"><a href="index.html" class="home"><div>Home</div></a></li>
                     <li class="nav-item"><a href="easy.html" class="easy"><div>Easy</div></a></li>
                     <li class="nav-item"><a href="medium.html" class="medium"><div>Medium</div></a></li>
@@ -29,7 +29,7 @@
         </div>
     </header>
 
-    <section class="main-page">
+    <section class="main-page content">
         <div class="container-fluid league-memorygame">
             <div class="row">
                 <div class="col-1 sidebar"></div>
@@ -39,72 +39,73 @@
                 <div>This is a game to test and train your memory! Pick the difficulty that you would like to play at in the navigation menu above and play!</div>
                 <div>The goal is to match the League of Legends champions. Try and see how it works below!</div>
             </div>
-            
+
+            <ul>
+                <li class="resettry"><button class="resetbutton">Reset</button></li>
+                <li class="resettry"><div>Tries: <a id="tries">0</a></div></li>
+            </ul>
+
             <div class="index-board">
                 <div class="row justify-content-md-center">
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/ahri.jpg" data-image="ahri" alt="ahri">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/akali.jpg" alt="akali" data-image="akali">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/brand.jpg" alt="brand" data-image="brand">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
                 </div>
 
                 <div class="row justify-content-md-center">
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/garen.jpg" alt="garen" data-image="garen">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/katarina.jpg" alt="katarina" data-image="katarina">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/pyke.jpg" alt="pyke" data-image="pyke">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
                 </div>
 
                 <div class="row justify-content-md-center">
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/pyke.jpg" alt="pyke" data-image="pyke">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/katarina.jpg" alt="katarina" data-image="katarina">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/garen.jpg" alt="garen" data-image="garen">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
                 </div>
 
                 <div class="row justify-content-md-center">
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/brand.jpg" alt="brand" data-image="brand">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/ahri.jpg" alt="ahri" data-image="ahri">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
-                    <div class="col-lg-1 card">
+                    <div class="col-sm-3 col-lg-1 card">
                     <img class="frontside" src="assets/images/akali.jpg" alt="akali" data-image="akali">
                     <img class="backside" src="assets/images/cardhome.png" alt="icon">
                     </div>
                 </div>
                 <div class="col-1 sidebar"></div>
-
-                <button class="resetbutton">Reset</button>
-
-                <div>Tries: <a id="tries">0</a></div>
 
                 <div id="myBtn"></div>
                 <div id="myModal" class="modal">
@@ -117,10 +118,11 @@
     </section>
 
     <footer class="footer row justify-content-center">
-        <a href="" class="col-2">Contact me!</a>
-        <a href="https://na.leagueoflegends.com/en-us/how-to-play/" target="_blank" class="col-2">League of legends info</a>
-        <a href="https://na.leagueoflegends.com/en-us/champions/" target="_blank" class="col-2">All League of Legends champions!</a>
+        <a href="" class="col-sm-12 col-lg-3 footercontent">Contact me!</a>
+        <a href="https://na.leagueoflegends.com/en-us/how-to-play/" target="_blank" class="col-sm-12 col-lg-3 footercontent">League of legends info</a>
+        <a href="https://na.leagueoflegends.com/en-us/champions/" target="_blank" class="col-sm-12 col-lg-3 footercontent">All League of Legends champions!</a>
     </footer>
+
     <script src="assets/js/scripts.js"></script>
 </body>
 </html>
