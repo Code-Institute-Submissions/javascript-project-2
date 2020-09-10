@@ -44,7 +44,11 @@ function disableCards() {
 function completed() {
     if ($(".card.flip").length == $(".card").length) {   // checks to see whether these were the last cards you needed to flip or not
         modal.style.display = "block";  //  if it was the last card that needed to be flipped it pops up the "completed" screen
-        resetgame()
+        $(".card").removeClass('flip');
+        setTimeout(() => { 
+            shuffle();
+            cards.forEach(card => card.addEventListener(`click`, flipCard));
+        }, 1300)
     }
 }
 
@@ -62,32 +66,17 @@ function resetMap() { // makes the cards clickable again when there is no match
     [flippedCard, locked] = [null, null];
     [firstCard, secondCard] = [null, null];
 }
-(function shuffle(){   // Function that shuffles the map correctly 
-    $.fn.shuffle = function() {
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function(){
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-           });
-        this.each(function(i){
-            $(this).replaceWith($(shuffled[i]));
-        });
-        return $(shuffled);
-    };
-})(jQuery);
+
+function shuffle() {
+    cards.forEach(card => {
+        let randomPlace = Math.floor(Math.random() * 12);
+        card.style.order = randomPlace;
+    });
+};
 
 var images = document.querySelectorAll('.frontside');
 
 cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
-
-window.addEventListener('load', function(){
-    $(images).shuffle();
-});
 
 var tries = 0;  //  keeps track of how many times user has checked for pairs
 function onTry() {
@@ -100,17 +89,43 @@ $(".resetbutton").on('click', resetgame)  // allows you to reset the map by clic
 
 function resetgame() {  //    function to make the game resettable by removing any flipped cards and re-randomizing the map layout.
     $(".card").removeClass('flip');
-    cards.forEach(card => card.addEventListener(`click`, flipCard));
     setTimeout(() => { 
-        $(images).shuffle();
+        shuffle();
+        cards.forEach(card => card.addEventListener(`click`, flipCard));
     }, 1300)
-    onTry(tries = -1)
+    onTry(tries = -1);
 }
+
+window.addEventListener('load', function(){
+    shuffle();
+});
 
 var modal = document.getElementById("myModal");  // The modal that pops up when completed
 
 window.onclick = function(event) {  // Closes the modal when clicked outside of
   if (event.target == modal) {
     modal.style.display = "none";
+    onTry(tries = -1);
   }
+}
+
+// service firebase.storage {
+//   match /b/{bucket}/o {
+//     match /{allPaths=**} {
+//       allow read, write: if request.auth != null;
+//     }
+//   }
+// }
+
+function highscore() {
+    if(highscore !== null){
+        if (tries < highscore) {
+            localStorage.setItem("highscore", tries);      
+        }
+    }
+    else {
+        localStorage.setItem("highscore", tries);
+    }
+
+    document.getElementById("highscoreview").innerHTML = localStorage.getItem("highscore");
 }
