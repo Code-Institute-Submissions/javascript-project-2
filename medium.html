@@ -6,6 +6,222 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>League of Legends memory game?</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="titleText">
+                <h1>League of Legends memory game</h1>
+            </div>
+
+            <div>
+                <ul class="nav-bar">
+                    <li class="nav-item"><a href="index.html" class="home"><div>Home</div></a></li>
+                    <li class="nav-item"><a href="easy.html" class="easy"><div>Easy</div></a></li>
+                    <li class="nav-item"><a href="medium.html" class="medium"><div>Medium</div></a></li>
+                    <li class="nav-item hard"><a href="hard.html" class="hard"><div>Hard</div></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="medium-page content container-fluid">
+
+        <ul class="row justify-content-center">
+            <li class="resettry"><button class="resetbutton">Reset</button></li>
+            <li class="resettry"><div>Tries: <a id="tries">0</a></div></li>
+        </ul>
+
+        <div class="justify-content-center row">
+            <div class="score">Your personal highscore is: <a id="highscoreview"></a></div>
+        </div>
+
+        <div class="row league-memorygame">
+
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-5 index-board container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/caitlyn.jpg" data-image="caitlyn" alt="caitlyn">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/camille.jpg" alt="camille" data-image="camille">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/ekko.jpg" alt="ekko" data-image="ekko">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/camille.jpg" alt="camille" data-image="camille">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/jayce.jpg" alt="jayce" data-image="jayce">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/jayce.jpg" alt="jayce" data-image="jayce">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/ezreal.jpg" alt="ezreal" data-image="ezreal">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/janna.jpg" alt="janna" data-image="janna">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/heimer.jpg" alt="heimer" data-image="heimer">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/jinx.jpg" alt="jinx" data-image="jinx">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/jinx.jpg" alt="jinx" data-image="jinx">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/mundo.jpg" alt="mundo" data-image="mundo">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/heimer.jpg" alt="heimer" data-image="heimer">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/janna.jpg" alt="janna" data-image="janna">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/ezreal.jpg" alt="ezreal" data-image="ezreal">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/mundo.jpg" alt="mundo" data-image="mundo">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/orianna.jpg" alt="orianna" data-image="orianna">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/orianna.jpg" alt="orianna" data-image="orianna">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/ekko.jpg" alt="ekko" data-image="ekko">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/caitlyn.jpg" alt="caitlyn" data-image="caitlyn">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/singed.jpg" alt="singed" data-image="singed">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/singed.jpg" alt="singed" data-image="singed">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/twitch.jpg" alt="twitch" data-image="twitch">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/twitch.jpg" alt="twitch" data-image="twitch">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/urgot.jpg" alt="urgot" data-image="urgot">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/urgot.jpg" alt="urgot" data-image="urgot">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/vi.jpg" alt="vi" data-image="vi">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/vi.jpg" alt="vi" data-image="vi">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/viktor.jpg" alt="viktor" data-image="viktor">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/viktor.jpg" alt="viktor" data-image="viktor">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/warwick.jpg" alt="warwick" data-image="warwick">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/warwick.jpg" alt="warwick" data-image="warwick">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/zac.jpg" alt="zac" data-image="zac">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/zac.jpg" alt="zac" data-image="zac">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/ziggs.jpg" alt="ziggs" data-image="ziggs">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-2 card medtable">
+                    <img class="frontside" src="assets/images/ziggs.jpg" alt="ziggs" data-image="ziggs">
+                    <img class="backside" src="assets/images/cardmed.png" alt="icon">
+                    </div>
+                </div>
+
+                <div id="myBtn"></div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <p>Congratulations! You have beaten this level in <span id="victry"></span> tries!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer row justify-content-center">
+        <a href="" class="col-sm-12 col-lg-3 footercontent">Contact me!</a>
+        <a href="https://na.leagueoflegends.com/en-us/how-to-play/" target="_blank" class="col-sm-12 col-lg-3 footercontent">League of legends info</a>
+        <a href="https://na.leagueoflegends.com/en-us/champions/" target="_blank" class="col-sm-12 col-lg-3 footercontent">All League of Legends champions!</a>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
 </body>
 </html>

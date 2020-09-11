@@ -49,6 +49,7 @@ function completed() {
             shuffle();
             cards.forEach(card => card.addEventListener(`click`, flipCard));
         }, 1300)
+        highscore();
     }
 }
 
@@ -109,15 +110,8 @@ window.onclick = function(event) {  // Closes the modal when clicked outside of
   }
 }
 
-// service firebase.storage {
-//   match /b/{bucket}/o {
-//     match /{allPaths=**} {
-//       allow read, write: if request.auth != null;
-//     }
-//   }
-// }
-
 function highscore() {
+    var highscore = localStorage.getItem("highscore");
     if(highscore !== null){
         if (tries < highscore) {
             localStorage.setItem("highscore", tries);      

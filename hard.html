@@ -6,83 +6,337 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="container-fluid league-memorygame">
-        Example and explanation of how the game works
-        tryout of a 3/4 map of cards
-        <div class="row justify-content-md-center">
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/ahri.jpg" alt="ahri">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>League of Legends memory game?</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="titleText">
+                <h1>League of Legends memory game</h1>
             </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/akali.jpg" alt="akali">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/brand.jpg" alt="brand">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
+
+            <div>
+                <ul class="nav-bar">
+                    <li class="nav-item"><a href="index.html" class="home"><div>Home</div></a></li>
+                    <li class="nav-item"><a href="easy.html" class="easy"><div>Easy</div></a></li>
+                    <li class="nav-item"><a href="medium.html" class="medium"><div>Medium</div></a></li>
+                    <li class="nav-item hard"><a href="hard.html" class="hard"><div>Hard</div></a></li>
+                </ul>
             </div>
         </div>
+    </header>
 
-        <div class="row justify-content-md-center">
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/garen.jpg" alt="garen">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/katarina.jpg" alt="katarina">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/pyke.jpg" alt="pyke">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
+    <section class="hard-page content container-fluid">
+
+        <ul class="row justify-content-center">
+            <li class="resettry"><button class="resetbutton">Reset</button></li>
+            <li class="resettry"><div>Tries: <a id="tries">0</a></div></li>
+        </ul>
+
+        <div class="justify-content-center row">
+            <div class="score">Your personal highscore is: <a id="highscoreview"></a></div>
         </div>
 
-        <div class="row justify-content-md-center">
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/pyke.jpg" alt="pyke">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/katarina.jpg" alt="katarina">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/garen.jpg" alt="garen">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-        </div>
+        <div class="row league-memorygame">
 
-        <div class="row justify-content-md-center">
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/brand.jpg" alt="brand">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/ahri.jpg" alt="ahri">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
-            </div>
-            <div class="col-lg-2 card">
-            <img class="frontside" src="assets/images/akali.jpg" alt="akali">
-            <img class="backside" src="assets/images/icon.jpg" alt="icon">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-10 index-board container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/ahri.jpg" data-image="ahri" alt="ahri">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/ahri.jpg" data-image="ahri" alt="ahri">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/akali.jpg" data-image="akali" alt="akali">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/akali.jpg" data-image="akali" alt="akali">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/cassio.jpg" data-image="cassio" alt="cassio">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/cassio.jpg" data-image="cassio" alt="cassio">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/darius.jpg" data-image="darius" alt="darius">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/darius.jpg" data-image="darius" alt="darius">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/draven.jpg" data-image="draven" alt="draven">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/draven.jpg" data-image="draven" alt="draven">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/irelia.jpg" data-image="irelia" alt="irelia">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/irelia.jpg" data-image="irelia" alt="irelia">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/ivern.jpg" data-image="ivern" alt="ivern">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/ivern.jpg" data-image="ivern" alt="ivern">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/jhin.jpg" data-image="jhin" alt="jhin">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/jhin.jpg" data-image="jhin" alt="jhin">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/karma.jpg" data-image="karma" alt="karma">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/karma.jpg" data-image="karma" alt="karma">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/katarina.jpg" data-image="katarina" alt="katarina">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/katarina.jpg" data-image="katarina" alt="katarina">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/kayn.jpg" data-image="kayn" alt="kayn">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/kayn.jpg" data-image="kayn" alt="kayn">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/kennen.jpg" data-image="kennen" alt="kennen">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/kennen.jpg" data-image="kennen" alt="kennen">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/kled.jpg" data-image="kled" alt="kled">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/kled.jpg" data-image="kled" alt="kled">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/leblanc.jpg" data-image="leblanc" alt="leblanc">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/leblanc.jpg" data-image="leblanc" alt="leblanc">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/lee.jpg" data-image="lee" alt="lee">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/lee.jpg" data-image="lee" alt="lee">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/morde.jpg" data-image="morde" alt="morde">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/morde.jpg" data-image="morde" alt="morde">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/rakan.jpg" data-image="rakan" alt="rakan">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/rakan.jpg" data-image="rakan" alt="rakan">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/riven.jpg" data-image="riven" alt="riven">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/riven.jpg" data-image="riven" alt="riven">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/sett.jpg" data-image="sett" alt="sett">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/sett.jpg" data-image="sett" alt="sett">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/shen.jpg" data-image="shen" alt="shen">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/shen.jpg" data-image="shen" alt="shen">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/sion.jpg" data-image="sion" alt="sion">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/sion.jpg" data-image="sion" alt="sion">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/swain.jpg" data-image="swain" alt="swain">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/swain.jpg" data-image="swain" alt="swain">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/syndra.jpg" data-image="syndra" alt="syndra">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/syndra.jpg" data-image="syndra" alt="syndra">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/talon.jpg" data-image="talon" alt="talon">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+
+                    </div><div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/talon.jpg" data-image="talon" alt="talon">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/varus.jpg" data-image="varus" alt="varus">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/varus.jpg" data-image="varus" alt="varus">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/vladimir.jpg" data-image="vladimir" alt="vladimir">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/vladimir.jpg" data-image="vladimir" alt="vladimir">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/wukong.jpg" data-image="wukong" alt="wukong">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/wukong.jpg" data-image="wukong" alt="wukong">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/xayah.jpg" data-image="xayah" alt="xayah">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/xayah.jpg" data-image="xayah" alt="xayah">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/yasuo.jpg" data-image="yasuo" alt="yasuo">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/yi.jpg" data-image="yi" alt="yi">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/yi.jpg" data-image="yi" alt="yi">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/yone.jpg" data-image="yone" alt="yone">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/yone.jpg" data-image="yone" alt="yone">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/zed.jpg" data-image="zed" alt="zed">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/zed.jpg" data-image="zed" alt="zed">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+                    <div class="col-xs-3 col-sm-1 hardtable card">
+                    <img class="frontside" src="assets/images/yasuo.jpg" data-image="yasuo" alt="yasuo">
+                    <img class="backside" src="assets/images/cardhard.png" alt="icon">
+                    </div>
+
+                </div>
+
+                <div id="myBtn"></div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <p>Congratulations! You have beaten this level in <span id="victry"></span> tries!</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <footer class="footer row justify-content-center">
+        <a href="" class="col-sm-12 col-lg-3 footercontent">Contact me!</a>
+        <a href="https://na.leagueoflegends.com/en-us/how-to-play/" target="_blank" class="col-sm-12 col-lg-3 footercontent">League of legends info</a>
+        <a href="https://na.leagueoflegends.com/en-us/champions/" target="_blank" class="col-sm-12 col-lg-3 footercontent">All League of Legends champions!</a>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
-
-.backside {
-    position: absolute;
-}
-
-.frontside,
-.backside {
-    background: white;
-}
-
-img {
-    width: 200px;
-    height: 200px;
-}
+</body>
+</html>
