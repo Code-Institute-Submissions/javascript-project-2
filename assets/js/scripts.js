@@ -49,7 +49,10 @@ function completed() {
             shuffle();
             cards.forEach(card => card.addEventListener(`click`, flipCard));
         }, 1300)
-        highscore();
+        homehighscore();
+        easyhighscore();
+        mediumhighscore();
+        hardhighscore();
     }
 }
 
@@ -110,16 +113,66 @@ window.onclick = function(event) {  // Closes the modal when clicked outside of
   }
 }
 
-function highscore() {
-    var highscore = localStorage.getItem("highscore");
-    if(highscore !== null){
-        if (tries < highscore) {
-            localStorage.setItem("highscore", tries);      
+var homehighscores = localStorage.getItem("homehighscore");
+
+function homehighscore() {
+    if(homehighscores !== null){
+        if (tries < homehighscores) {
+            localStorage.setItem("homehighscore", tries);      
         }
     }
     else {
-        localStorage.setItem("highscore", tries);
+        localStorage.setItem("homehighscore", tries);
     }
-
-    document.getElementById("highscoreview").innerHTML = localStorage.getItem("highscore");
+    document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
 }
+
+document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
+
+var easyhighscores = localStorage.getItem("easyhighscore");
+
+function easyhighscore() {
+    if(easyhighscores !== null){
+        if (tries < easyhighscores) {
+            localStorage.setItem("easyhighscore", tries);      
+        }
+    }
+    else {
+        localStorage.setItem("easyhighscore", tries);
+    }
+    document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
+}
+
+document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
+
+var mediumhighscores = localStorage.getItem("mediumhighscore");
+
+function mediumhighscore() {
+    if(mediumhighscores !== null){
+        if (tries < mediumhighscores) {
+            localStorage.setItem("mediumhighscore", tries);      
+        }
+    }
+    else {
+        localStorage.setItem("mediumhighscore", tries);
+    }
+    document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
+}
+
+document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
+
+var hardhighscores = localStorage.getItem("hardhighscore");
+
+function hardhighscore() {
+    if(hardhighscores !== null){
+        if (tries < hardhighscores) {
+            localStorage.setItem("hardhighscore", tries);      
+        }
+    }
+    else {
+        localStorage.setItem("hardhighscore", tries);
+    }
+    document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
+}
+
+document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
