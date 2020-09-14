@@ -20,9 +20,9 @@
 
             <div>
                 <ul class="nav-bar">
-                    <li class="nav-item"><a href="index.html" class="home"><div>Home</div></a></li>
-                    <li class="nav-item"><a href="easy.html" class="easy"><div>Easy</div></a></li>
-                    <li class="nav-item"><a href="medium.html" class="medium"><div>Medium</div></a></li>
+                    <li class="nav-item home"><a href="index.html" class="home"><div>Home</div></a></li>
+                    <li class="nav-item easy"><a href="easy.html" class="easy"><div>Easy</div></a></li>
+                    <li class="nav-item medium"><a href="medium.html" class="medium"><div>Medium</div></a></li>
                     <li class="nav-item hard"><a href="hard.html" class="hard"><div>Hard</div></a></li>
                 </ul>
             </div>
@@ -119,8 +119,20 @@
         </div>
     </section>
 
+
+     <div id="emailmodal" class="modal">
+        <div class="modal-content">
+            <form onsubmit="return sendMail(this)">
+                <input type="text" name="name" class="form-control" id="fullname" placeholder="Name">
+                <input type="text" name="mail" class="form-control" id="emailaddress" placeholder="Email">
+                <textarea rows="5" name="message" class="form-control" id="message" placeholder="Message"></textarea>
+                <button type="submit" class="btn btn-secondary center-block">Submit</button>
+            </form>
+         </div>
+    </div>
+
     <footer class="footer row justify-content-center">
-        <a href="" class="col-sm-12 col-lg-3 footercontent">Contact me!</a>
+        <a class="col-sm-12 col-lg-3 footercontent email" id="emailbutton">Contact me!</a>
         <a href="https://na.leagueoflegends.com/en-us/how-to-play/" target="_blank" class="col-sm-12 col-lg-3 footercontent">League of legends info</a>
         <a href="https://na.leagueoflegends.com/en-us/champions/" target="_blank" class="col-sm-12 col-lg-3 footercontent">All League of Legends champions!</a>
     </footer>

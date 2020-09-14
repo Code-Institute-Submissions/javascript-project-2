@@ -67,28 +67,37 @@ function completed() {
 
 var levels = document.getElementsByClassName("nav-item");
 
+
+console.log(currLevel);
+
 var currLevel = "home"
 
 var levelselect = function() {
-    if(element.classList.contains("home")) {
-        currLevel = "home"
-        document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
-    }
-    if(element.classList.contains("easy")) {
-        currLevel = "easy"
-        document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
-    }
-    if(element.classList.contains("medium")) {
-        currLevel = "medium"
-        document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
-    }
-    if(element.classList.contains("hard")) {
-        currLevel = "hard"
-        document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
+    for (var i = 0; i < levels.length; i++) {
+        if(levels[i].classList.contains("home")) {
+            currLevel = "home"
+            document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
+        }
+        if(levels[i].classList.contains("easy")) {
+            currLevel = "easy"
+            document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
+        }
+        if(levels[i].classList.contains("medium")) {
+            currLevel = "medium"
+            document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
+        }
+        if(levels[i].classList.contains("hard")) {
+            currLevel = "hard"
+            document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
+        }
     }
 };
 
-levels.addEventListener('click', levelselect);
+console.log(currLevel);
+
+for (var i = 0 ; i < levels.length; i++) {
+   levels[i].addEventListener('click' , levelselect); 
+}
 
 function unflipCards() { // unflips the cards when there is no match after a brief delay
     locked = true;
@@ -161,8 +170,6 @@ function homehighscore() {
     document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
 }
 
-document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
-
 var easyhighscores = localStorage.getItem("easyhighscore");
 
 function easyhighscore() {
@@ -220,3 +227,19 @@ function sendMail(contactForm) {
             console.log("FAILED", error);
         });
 }
+
+var embutton = document.getElementById("emailbutton");
+var emodal = document.getElementById("emailmodal");
+
+function loademailmodal() {
+    emodal.style.display = "block";
+}
+
+embutton.addEventListener('click', loademailmodal);
+
+window.onclick = function(event) {  // Closes the email modal when clicked outside of
+  if (event.target == emodal) {
+    emodal.style.display = "none";
+  }
+}
+
