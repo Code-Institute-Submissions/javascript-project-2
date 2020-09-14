@@ -50,23 +50,45 @@ function completed() {
             cards.forEach(card => card.addEventListener(`click`, flipCard));
         }, 1300)
 
-        var sPath = window.location.pathname;
-        var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-        
-        if (sPage == "index.html") {
+        if (currLevel = "home") {
             homehighscore();
         }
-        if (sPage == "easy.html") {
+        if (currLevel = "easy") {
             easyhighscore();
         }
-        if (sPage == "medium.html") {
+        if (currLevel = "medium") {
             mediumhighscore();
         }
-        if (sPage == "hard.html") {
+        if (currLevel = "hard") {
             hardhighscore();
         }
     }
 }
+
+var levels = document.getElementsByClassName("nav-item");
+
+var currLevel = "home"
+
+var levelselect = function() {
+    if(element.classList.contains("home")) {
+        currLevel = "home"
+        document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
+    }
+    if(element.classList.contains("easy")) {
+        currLevel = "easy"
+        document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
+    }
+    if(element.classList.contains("medium")) {
+        currLevel = "medium"
+        document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
+    }
+    if(element.classList.contains("hard")) {
+        currLevel = "hard"
+        document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
+    }
+};
+
+levels.addEventListener('click', levelselect);
 
 function unflipCards() { // unflips the cards when there is no match after a brief delay
     locked = true;
@@ -155,8 +177,6 @@ function easyhighscore() {
     document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
 }
 
-document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
-
 var mediumhighscores = localStorage.getItem("mediumhighscore");
 
 function mediumhighscore() {
@@ -170,8 +190,6 @@ function mediumhighscore() {
     }
     document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
 }
-
-document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
 
 var hardhighscores = localStorage.getItem("hardhighscore");
 
@@ -187,4 +205,18 @@ function hardhighscore() {
     document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
 }
 
-document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
+
+function sendMail(contactForm) {
+    emailjs.send("gmail", "cardgame", {
+        "from_name": contactForm.name.value,
+        "from_email": contactForm.emailaddress.value,
+        "message": contactForm.message.value
+    })
+    .then(
+        function(response) {
+            console.log("SUCCESS", response);
+        },
+        function(error) {
+            console.log("FAILED", error);
+        });
+}
