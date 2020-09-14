@@ -49,10 +49,22 @@ function completed() {
             shuffle();
             cards.forEach(card => card.addEventListener(`click`, flipCard));
         }, 1300)
-        homehighscore();
-        easyhighscore();
-        mediumhighscore();
-        hardhighscore();
+
+        var sPath = window.location.pathname;
+        var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+        
+        if (sPage == "index.html") {
+            homehighscore();
+        }
+        if (sPage == "easy.html") {
+            easyhighscore();
+        }
+        if (sPage == "medium.html") {
+            mediumhighscore();
+        }
+        if (sPage == "hard.html") {
+            hardhighscore();
+        }
     }
 }
 
