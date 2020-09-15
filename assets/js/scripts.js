@@ -4,6 +4,10 @@ let flippedCard = false;
 let firstCard, secondCard;
 let locked = false;
 
+var path = window.location.pathname;
+var page = path.split("/").pop();
+console.log( page );
+
 function flipCard() {
     if (locked) return;    // makes you unable to check for a second pair while the first one is still visible
     if (this === firstCard) return;     // makes it so that you can't doubleclick a card
@@ -50,16 +54,16 @@ function completed() {
             cards.forEach(card => card.addEventListener(`click`, flipCard));
         }, 1300)
 
-        if (currLevel = "home") {
+        if (page = "index.html") {
             homehighscore();
         }
-        if (currLevel = "easy") {
+        if (page = "easy.html") {
             easyhighscore();
         }
-        if (currLevel = "medium") {
+        if (page = "medium.html") {
             mediumhighscore();
         }
-        if (currLevel = "hard") {
+        if (page = "hard.html") {
             hardhighscore();
         }
     }
@@ -67,33 +71,25 @@ function completed() {
 
 var levels = document.getElementsByClassName("nav-item");
 
-
-console.log(currLevel);
-
-var currLevel = "home"
+if (page = "medium.html") {
+    console.log("page is medium");
+}
 
 var levelselect = function() {
-    for (var i = 0; i < levels.length; i++) {
-        if(levels[i].classList.contains("home")) {
-            currLevel = "home"
+        if(page = "home.html") {
             document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
         }
-        if(levels[i].classList.contains("easy")) {
-            currLevel = "easy"
+        if(page = "easy.html") {
             document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
         }
-        if(levels[i].classList.contains("medium")) {
-            currLevel = "medium"
+        if(page = "medium.html") {
             document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
         }
-        if(levels[i].classList.contains("hard")) {
-            currLevel = "hard"
+        if(page = "hard.html") {
             document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
         }
-    }
 };
 
-console.log(currLevel);
 
 for (var i = 0 ; i < levels.length; i++) {
    levels[i].addEventListener('click' , levelselect); 
@@ -149,12 +145,7 @@ window.addEventListener('load', function(){
 
 var modal = document.getElementById("myModal");  // The modal that pops up when completed
 
-window.onclick = function(event) {  // Closes the modal when clicked outside of
-  if (event.target == modal) {
-    modal.style.display = "none";
-    onTry(tries = -1);
-  }
-}
+
 
 var homehighscores = localStorage.getItem("homehighscore");
 
@@ -238,8 +229,12 @@ function loademailmodal() {
 embutton.addEventListener('click', loademailmodal);
 
 window.onclick = function(event) {  // Closes the email modal when clicked outside of
-  if (event.target == emodal) {
+  if (event.target == emodal) {   //  targets the email modal
     emodal.style.display = "none";
+  }
+  if (event.target == modal) {  // targets the victory screen modal
+    modal.style.display = "none";
+    onTry(tries = -1);
   }
 }
 
