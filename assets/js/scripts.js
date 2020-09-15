@@ -23,7 +23,7 @@ function flipCard() {
 
     checkMatch();   // checks for matches and if theres a match it keeps them up and makes them unable to click
     // if theres no match they flip themselves back after a short delay
-    onTry()
+    onTry();
 }
 
 function checkMatch() {
@@ -35,65 +35,57 @@ function checkMatch() {
 }
 
 function disableCards() {
-    firstCard.removeEventListener('click', flipCard)
-    secondCard.removeEventListener('click', flipCard)
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
 
     resetMap();  // Resets the map when there is a mismatch, making sure you can select "firstCard" again.
 
     setTimeout(() => {
-        completed()
-    }, 1300)
+        completed();
+    }, 1300);
 }
 
 function completed() {
     if ($(".card.flip").length == $(".card").length) {   // checks to see whether these were the last cards you needed to flip or not
         modal.style.display = "block";  //  if it was the last card that needed to be flipped it pops up the "completed" screen
         $(".card").removeClass('flip');
-        setTimeout(() => { 
+        setTimeout(() => {   // reshuffles the cards after a brief delay
             shuffle();
-            cards.forEach(card => card.addEventListener(`click`, flipCard));
-        }, 1300)
+            cards.forEach(card => card.addEventListener(`click`, flipCard));   
+        }, 1300);
 
-        if (page = "index.html") {
+
+        // runs the correct highscore function according to the difficulty youre on
+        if (page == "index.html") {  
             homehighscore();
         }
-        if (page = "easy.html") {
+        if (page == "easy.html") {
             easyhighscore();
         }
-        if (page = "medium.html") {
+        if (page == "medium.html") {
             mediumhighscore();
         }
-        if (page = "hard.html") {
+        if (page == "hard.html") {
             hardhighscore();
         }
     }
 }
 
-var levels = document.getElementsByClassName("nav-item");
 
-if (page = "medium.html") {
-    console.log("page is medium");
+//   Determines what page youre on and gives the correct value for the highscore of that difficulty
+if(page == "index.html") {
+    document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
+}
+if(page == "easy.html") {
+    document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
+}
+if(page == "medium.html") {
+    document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
+}
+if(page == "hard.html") {
+     document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
 }
 
-var levelselect = function() {
-        if(page = "home.html") {
-            document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
-        }
-        if(page = "easy.html") {
-            document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
-        }
-        if(page = "medium.html") {
-            document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
-        }
-        if(page = "hard.html") {
-            document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
-        }
-};
-
-
-for (var i = 0 ; i < levels.length; i++) {
-   levels[i].addEventListener('click' , levelselect); 
-}
 
 function unflipCards() { // unflips the cards when there is no match after a brief delay
     locked = true;
@@ -102,7 +94,7 @@ function unflipCards() { // unflips the cards when there is no match after a bri
         secondCard.classList.remove('flip');
 
         resetMap();
-    }, 1300)
+    }, 1300);
 }
 
 function resetMap() { // makes the cards clickable again when there is no match
@@ -115,27 +107,26 @@ function shuffle() {
         let randomPlace = Math.floor(Math.random() * 12);
         card.style.order = randomPlace;
     });
-};
+}
 
-var images = document.querySelectorAll('.frontside');
 
-cards.forEach(card => card.addEventListener(`click`, flipCard)) ;
+cards.forEach(card => card.addEventListener(`click`, flipCard));
 
 var tries = 0;  //  keeps track of how many times user has checked for pairs
 function onTry() {
     tries += 1;
     document.getElementById("tries").innerHTML = tries;
     document.getElementById("victry").innerHTML = tries;
-};
+}
 
-$(".resetbutton").on('click', resetgame)  // allows you to reset the map by clicking the button allowing you to "retry"
+$(".resetbutton").on('click', resetgame);  // allows you to reset the map by clicking the button allowing you to "retry"
 
 function resetgame() {  //    function to make the game resettable by removing any flipped cards and re-randomizing the map layout.
     $(".card").removeClass('flip');
     setTimeout(() => { 
         shuffle();
         cards.forEach(card => card.addEventListener(`click`, flipCard));
-    }, 1300)
+    }, 1300);
     onTry(tries = -1);
 }
 
@@ -146,10 +137,10 @@ window.addEventListener('load', function(){
 var modal = document.getElementById("myModal");  // The modal that pops up when completed
 
 
-
+//checks to see if youre current score is better than your highscore for the home difficulty
 var homehighscores = localStorage.getItem("homehighscore");
 
-function homehighscore() {
+function homehighscore() {  
     if(homehighscores !== null){
         if (tries < homehighscores) {
             localStorage.setItem("homehighscore", tries);      
@@ -161,6 +152,7 @@ function homehighscore() {
     document.getElementById("homehighscoreview").innerHTML = localStorage.getItem("homehighscore");
 }
 
+//checks to see if youre current score is better than your highscore for the easy difficulty
 var easyhighscores = localStorage.getItem("easyhighscore");
 
 function easyhighscore() {
@@ -175,6 +167,8 @@ function easyhighscore() {
     document.getElementById("easyhighscoreview").innerHTML = localStorage.getItem("easyhighscore");
 }
 
+
+//checks to see if youre current score is better than your highscore for the medium difficulty
 var mediumhighscores = localStorage.getItem("mediumhighscore");
 
 function mediumhighscore() {
@@ -189,6 +183,8 @@ function mediumhighscore() {
     document.getElementById("mediumhighscoreview").innerHTML = localStorage.getItem("mediumhighscore");
 }
 
+
+//checks to see if youre current score is better than your highscore for the hard difficulty
 var hardhighscores = localStorage.getItem("hardhighscore");
 
 function hardhighscore() {
@@ -203,6 +199,8 @@ function hardhighscore() {
     document.getElementById("hardhighscoreview").innerHTML = localStorage.getItem("hardhighscore");
 }
 
+
+// allows users to submit a message to me with any tips, info or suggestions or complaints.
 
 function sendMail(contactForm) {
     emailjs.send("gmail", "cardgame", {
@@ -219,6 +217,8 @@ function sendMail(contactForm) {
         });
 }
 
+
+// makes the modal pop up when contact me! is clicked
 var embutton = document.getElementById("emailbutton");
 var emodal = document.getElementById("emailmodal");
 
@@ -236,5 +236,4 @@ window.onclick = function(event) {  // Closes the email modal when clicked outsi
     modal.style.display = "none";
     onTry(tries = -1);
   }
-}
-
+};
